@@ -1,0 +1,81 @@
+********************L E S S O N   3.5 ************************
+
+
+Bash actually is TTY (TeleTYpewriter   TeleTypeWriter )
+Ctrl+Shift++  = zoom out Bash
+Ctrl+-  = zoom in
+Ctrl+0  = normal size
+Ctrl + L  = the same as clear command
+free = команда статусу системи (free -h  = human readable;  Gi = гігібайт  Mi=мібібайт - одиниці вимирювання в системі "сі")
+dr = команда виводить місця зберігання інформації в системі
+grep = шукає частину яка нам потрібна (df -h | grep sda)
+cat  = подібна до grep, розібратися
+uptime = показує стан системи
+exit = вихід , аналог Ctrl+D
+watch <command> = команда обновляє, перезапускає через 2 сек  дану їй команду (watch free -h)
+Ctrl+C = відмінити, прериває поточний процес, програму
+killall <proccess> = вбиває все що зв"язано з процесом; killall5;
+kill <proccess> = вбиває конкретний процес; kill -KILL <PID>; -HUB = ключ для перезчитування конфігурації без перезапуску процеса; є ще стоп, пауза і т.д.;
+ps = відображає поточні процеси ; ps aux = відображає геть всі процеси; ps ax = інф. про процеси без юзерів; ps -a = урізана версія для не root;
+top = крута програма для процесів, не статична, обновляє стан процесів подібно до команди watch
+shell  --- Bourne Again SHell
+set = виводить environment
+pringenv = виводить environment
+echo $PATH
+# = sharp, diese
+. <file>  = крапка вказує системі зчитати вказаний файл
+vdir   =
+fgrep  =
+egrep  = подивитися що значать
+\<command>  =  (backslash) ігнорує alias до команд
+nano -l =   включення нумерації рядків в редакторі nano
+alias nano='nano -l'  =  створення alias для nano.
+exec <file>  = команда запускає вказаний файл
+
+
+
+
+
+sudo apt-get remove --purge libreoffice*
+sudo apt-get autoremove
+
+
+
+
+
+
+///////////BASH Scrips//////////////
+
+#!usr/bin/bash  = вказує системі що даний файл є баш-скриптом (поміщається у перший рядок файлу скріпта)
+
+
+/home/ab/bin/scriptt
+
+You can check the existence of file in bash by using ‘-e’ or ‘-f’ option.
+use backticks  "` `"  to execute shell command
+printf "\n" - новий рядок
+
+ps, slabtop, top, vmstat
+
+
+
+
+ВЧИТИ:
+free команда (free --help, man free), що таку swap і т.д.
+grep = команда 
+uptime
+killall
+kill
+top
+set
+як добавити у PATH свій шлях
+.bash_logout - розібратися що в ньому зберігається
+інтерпритовані і неінтерпритовані мови програмування
+linux/bash regexp  =  читати поки не посинію
+
+
+
+
+
+Show All Running Processes in Linux    https://www.cyberciti.biz/faq/show-all-running-processes-in-linux/
+How To Kill Process   in Linux https://www.cyberciti.biz/faq/kill-process-in-linux-or-terminate-a-process-in-unix-or-linux-systems/
