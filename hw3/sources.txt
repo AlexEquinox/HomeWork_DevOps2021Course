@@ -1,0 +1,11 @@
+	::::: SOURCES :::::::
+
+File Permissions    https://www.guru99.com/file-permissions.html
+
+About "ls" command     https://linoxide.com/20-ls-command-linux/
+
+Переменные окружения     https://wiki.merionet.ru/servernye-resheniya/43/peremennye-okruzheniya-v-linux-kak-posmotret-ustanovit-i-sbrosit/
+
+"find" команда    https://www.geeksforgeeks.org/find-command-in-linux-with-examples/
+
+"cat" команда    https://www.tecmint.com/13-basic-cat-command-examples-in-linux/  &&  https://linuxhint.com/cat-command-bash/

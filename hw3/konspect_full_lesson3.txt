@@ -1,0 +1,100 @@
+﻿*****************Lesson 3*****************
+
+::::::::BASH commands::::::::::
+
+hostname = name of the host machine
+$  = stands for "standard user"
+#  = stands for "pound sign", hash
+ls  = stands for "list storage";  ls *.txt;  ls ????b
+dir  = analog for ls, but works also on older  versions of linux
+./  = прямо з терміналу запустити щось в поточному каталозі, e.g.   ./go.bash = запустити бінарний файл go.bash з поточного каталогу
+chmod =  "change mode", change file permissions 
+chown =   "change owner" of a file/directory
+chgrp = change group
+pwd = print working directory
+pushd = тимчасовий перехід в директорію
+popd = повернення назад в каталог, із якого був перехід через pushd
+file <file> = покаже тип файлу
+locate <file>  =  finds the file from mapped filesystem database
+sudo updatedb  = updates the map database for locate command
+which <command>  = команда показує інформацію про іншу команду
+whatis <command> = показує інформацю що робить команда
+cal = календар
+apropos <part of a name of the command> = знайде інфу про всі команди, в імені яких є введений відрізок
+Ctlr+C = відміна, преривання поточного процесу.
+Ctrl+W = зтирає останнє набране в консолі слово до першого пробіла
+man <command> = документація по команді 
+touch = змінює на поточну дату редагування файлу (якщо файлу не існує, то вона його створить)
+cp <file1> <file2> = копіює file1 в file2, якщо file2 не існує, то створює його
+mv <file1> <file2> = перейменовує file1 в file2, у file2 можна вказати шлях, тоді воно + перемістить у вказаний шлях.
+rm <file> = видаляє файл; rm -r = видаляє каталог (recursive) ;  rm -rf *  = видаляє все і всьо;
+rmdir = видаляє тільки пусті каталоги
+cat = розібратися трохи з цією командою (concatenate);   cat >> file1.txt;   cat *.txt
+echo = вміє перенаправляти потоки; echo hello >> file.txt
+| = pipe, почитати про pipe
+> >> = почитати про redirection
+users = показує поточних користувачів хоста
+who = більше інформації про користувача
+id = ще більше інформації про користувача
+su = розчехлити про цю команду (не можна використовувати без аргументів та із '-'(hypen), бо можна активувати root користувача)
+
+///////////////////
+
+
+
+::::: SOURCES :::::::  для ДЗ # 3 
+
+File Permissions    https://www.guru99.com/file-permissions.html
+About "ls" command     https://linoxide.com/20-ls-command-linux/
+Переменные окружения     https://wiki.merionet.ru/servernye-resheniya/43/peremennye-okruzheniya-v-linux-kak-posmotret-ustanovit-i-sbrosit/
+"find" команда    https://www.geeksforgeeks.org/find-command-in-linux-with-examples/
+'cat' команда    https://www.tecmint.com/13-basic-cat-command-examples-in-linux/  &&  https://linuxhint.com/cat-command-bash/
+
+
+
+///////////////////
+
+
+Таймкоди з відео
+17:10 - подивитись який самий вищий корінь каталогу , подвійний слеш // и т.д.
+17:55 - команда  ls -l , розібратися що значить total, і з permissions
+total значить кількість блоків, які займають на диску файли поточної директорії
+21:27  - попросити посилання на вигляд файлової системи
+38:15  - включити NAT і встановити tree
+56:36  - встановити команду locate
+59:00 - команда find на самостійне опрацювання
+1:56:05  - розібратися про доступи в файловій системі
+
+
+///////////////////
+
+
+:::::::::Some example bash commands from homework::::::::::
+
+
+CHANGING FILE PERMISSIONS (chmod) :
+touch top_secret.fbi
+ls -l top_secret.fbi
+-rw-rw-r-- 1 ab ab 0 Jul 15 17:30 top_secret.fbi
+CHANGE PERMISSIONS WITH ABSOUTE(NUMERIC) MODE
+chmod 740 top_secret.fbi
+-rwxr----- 1 ab ab 0 Jul 15 17:30 top_secret.fbi
+CHANGE PERMISSIONS WITH SYMBOLIC MODE
+chmod o=r-- top_secret.fbi
+-rwxr--r-- 1 ab ab 0 Jul 15 17:30 top_secret.fbi
+chmod g+x top_secret.fbi
+-rwxr-xr-- 1 ab ab 0 Jul 15 17:30 top_secret.fbi
+chmod a=--- top_secret.fbi
+---------- 1 ab ab 0 Jul 15 17:30 top_secret.fbi
+
+CHANGING FILE'S OWNER/GROUP (chown):
+---------- 1 ab ab 0 Jul 15 17:30 top_secret.fbi
+CHANGING OWNER TO root
+sudo chown root top_secret.fbi
+---------- 1 root ab 0 Jul 15 17:30 top_secret.fbi
+CHANGING GROUP TO cdrom
+sudo chgrp cdrom top_secret.fbi
+---------- 1 root cdrom 0 Jul 15 17:30 top_secret.fbi
+CHANGE OWNER AND GROUP SHORTCUT
+sudo chown ab:ab top_secret.fbi
+---------- 1 ab ab 0 Jul 15 17:30 top_secret.fbi
