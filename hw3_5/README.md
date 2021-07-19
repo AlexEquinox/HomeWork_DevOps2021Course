@@ -7,7 +7,7 @@
 2
 3 ls -lrt | grep ^- | awk 'END{print $NF}'
 ```
-[script_last_changed_file](./script_last_changed.png)
+![script_last_changed_file](./script_last_changed.png)
 
 ## Script 2
 ## _Show summary number of files in current directory_
@@ -22,7 +22,7 @@
  8 exit 1
  9 fi
 ```
-[script_number_of_files](./script_number_of_files.png)
+![script_number_of_files](./script_number_of_files.png)
 
 
 ## Script 3
@@ -39,4 +39,4 @@
  9 echo "You are not root"
 10 fi
 ```
-[script_root_or_not](./script_root_or_not.png)
+![script_root_or_not](./script_root_or_not.png)
