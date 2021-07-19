@@ -79,3 +79,4 @@ linux/bash regexp  =  читати поки не посинію
 
 Show All Running Processes in Linux    https://www.cyberciti.biz/faq/show-all-running-processes-in-linux/
 How To Kill Process   in Linux https://www.cyberciti.biz/faq/kill-process-in-linux-or-terminate-a-process-in-unix-or-linux-systems/
+40 Practical and Useful awk Command in Linux and BSD  https://www.ubuntupit.com/useful-awk-command-in-linux-and-bsd/
