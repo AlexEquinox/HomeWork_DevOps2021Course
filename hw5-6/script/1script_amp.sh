@@ -1,6 +1,5 @@
 #!usr/bin/bash
 sudo apt-get -y install apache2 mysql-server 
-sudo ufw allow in "Apache Full"
 sudo mysql_secure_installation<<EOF
 n
 666
