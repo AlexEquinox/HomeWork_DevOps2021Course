@@ -1,4 +1,4 @@
-#!usr/bin/bash
+#/bin/sh
 sudo apt-get -y install apache2 mysql-server
 sudo mysql_secure_installation<<EOF
 n

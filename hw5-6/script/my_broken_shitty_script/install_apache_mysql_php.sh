@@ -1,4 +1,4 @@
-#!usr/bin/bash
+#/bin/sh
 
 # install and configure apache
 sudo -y apt update

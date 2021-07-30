@@ -1,4 +1,4 @@
-#!usr/bin/bash
+#/bin/sh
 
 install_dir="/var/www/html"
 #Creating Random WP Database Credenitals
