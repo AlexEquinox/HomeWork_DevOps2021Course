@@ -1,0 +1,60 @@
+************L E S S O N 7***********
+
+lesson's links:
+https://docs.docker.com/get-started/overview/
+https://www.docker.com/resources/what-container
+https://habr.com/ru/company/southbridge/blog/515508/
+https://habr.com/ru/company/ruvds/blog/438796/
+
+
+sudo docker ps = показує активні контейнери
+sudo docker ps -a = показує всі контейнери
+sudo docker rm <container name> = видаляє контейнер
+sudo docker images = показує наявні images
+sudo docker rmi <name or ID of image> = удалити image
+sudo docker run ubuntu = загрузити image of ubuntu (dockerized) і запустити відповідний контейнер з нею
+sudo docker stop <name or ID of container>
+sudo docker pull <image> = тільки скачати образ контейнера і не запускати його
+sudo docker run -i -t ubuntu:14.04 bash = запускає контейнер в інтерактивному режимі з терміналом
+cat /etc/lsb-release (або просто release в старіших дистрибутивах) = інфа про поточний дистрибутив лінукса
+netstat -lntp = інфа про мережу
+exit = вихід з контейнера
+sudo docker attach <container name or ID> = приєднатися до уже від"єднаного контейнера
+sudo docker inspect <name or ID of container> = інфа про контейнер
+sudo docker logs <name or ID of container> = покаже логі контейнера
+sudo docker run -d -p 80:8080 kodekloud/simple-webapp = запускає вказаний (із образу kodekloud/simple-webapp) контейнер разом із перекидкою портів (внутрішній 8080-й порт із докера перекидається на 80 порт хоста(віртуальної машини лінукса))
+
+
+
+
+
+*******************L E S S O N 7.5**************************
+
+lesson's links:
+https://upcloud.com/community/tutorials/wordpress-with-docker/
+
+
+sudo docker run hello-world = запускає тестовий привітальний контейнер
+sudo systemctl restart docker (розглянути що вміє команда systemctl)
+systemctl - розглянути що ця команда вміє
+sudo docker stop/start/restart <name of container>
+sudo docker pull wordpress = скачати image вордпрес, але не запускати його
+sudo docker history <image> = покаже інфу про образ, як він був створений, вміст(не весь) файлу Dockerhistory
+
+
+Additional my links:
+
+List of Docker Commands
+https://afourtech.com/guide-docker-commands-examples/
+
+The complete list of Docker Commands:
+https://docs.docker.com/engine/reference/commandline/docker/
+
+Play with Docker Classroom
+https://training.play-with-docker.com/#ops
+
+Dockerfile reference
+https://docs.docker.com/engine/reference/builder/
+
+Best practices for writing Dockerfiles
+https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
