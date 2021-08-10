@@ -1,0 +1,48 @@
+FROM ubuntu:21.04
+MAINTAINER alex
+RUN apt-get update && apt-get install -y apache2
+CMD echo "HELLO WORLD"
+#ENTRYPOINT echo $VAR1 = ця команда має вищий приорітет ніж команда CMD, вона перезаписує CMD. 
+#ADD config.yml /var/httpd/conf/
+#COPY from(host) where(container) (syntax same as for ADD)
+COPY config.yml /var/httpd/conf/
+#ENV VAR1 "HELLO WORLD" = вказує переменные окружения
+WORKDIR /var/httpd = вказує з якого каталога будуть запускатися всі команди прописані в CMD. Зазвичай це внутрішній каталог контейнера, виняток коли цей внутрішній каталог зробити volume і прив"язати до зовнішнього каталога на хості
+EXPOSE 80 = вказує через який порт можна підключитись до контейнера, по замовчуванню контейнер абсолютно закритий
+USER <user ID> = вказує від якого користувача будуть запускатися команди в CMD
+VOLUME ["/dir1", "/dir2"] = створює каталоги dir1 та dir2 на реальній машині(хості) за адресою /var/lib/docker/volumes
+
+
+
+
+Запустити створення образу (apache) із Dockerfile:
+sudo docker build -t apache2_custom .
+
+Запустити контейнер (apache)
+sudo docker run -p 80:80 --name <container's name> <name or ID of image>
+
+Запустити контейнер (apache) в інтерактивному режимі  в bash
+sudo docker run -itp 80:80 --name apache_custom2 apache2_custom bash
+
+
+
+
+Запустити створення образу (nginx) із Dockerfile:
+sudo docker build -t nginx_custom .
+
+Запустити контейнер (nginx)
+sudo docker run -p 80:80 --name nginx111 nginx_custom
+
+Запустити контейнер (nginx) в інтерактивному режимі  в bash
+sudo docker run -itp 80:80 --name <container's name> <name or ID of image> bash
+
+
+
+
+sudo docker ps -aq = видає тільки ID всіх контейнерів
+
+Видалити всі контейнери однією командою:
+sudo docker rm -f $(sudo docker ps -aq)
+
+
+du -hs /var/lib/apt/lists = показує розмір вказаної папки (ключі -h = human readable -s = тільки summary всієї папки без розмірів окремих елементів)

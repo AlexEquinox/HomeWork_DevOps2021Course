@@ -1,0 +1,8 @@
+FROM ubuntu:21.04
+RUN apt-get update
+RUN apt-get install -y nginx
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+#ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
+
