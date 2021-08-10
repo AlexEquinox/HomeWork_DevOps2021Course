@@ -1,0 +1,49 @@
+lesson links:
+https://youtu.be/aWDpfjNTfO0
+
+https://docs.docker.com/compose/
+https://docs.docker.com/engine/swarm/
+https://github.com/dockersamples/example-voting-app
+
+------------
+
+Storage driver (AUFS для Ubuntu, ZFS для серйозніших проектів) = почитати в документації Docker
+Terraform
+Cubernetes
+Cubernetes minikube K8
+docker compose
+docker swarm
+
+Orchestration: networking, monitoring, repair, storage, re/deploy.
+------------
+
+
+Storage driver 
+https://docs.docker.com/storage/storagedriver/select-storage-driver/
+
+Ideally, very little data is written to a container’s writable layer, and you use Docker volumes to write data. However, some workloads require you to be able to write to the container’s writable layer.
+The storage driver controls how images and containers are stored and managed on your Docker host.
+The Docker Engine has a prioritized list of which storage driver to use if no storage driver is explicitly configured
+Some storage drivers require you to use a specific format for the backing filesystem.
+Your operating system and kernel may not support every storage driver.
+When in doubt, the best all-around configuration is to use a modern Linux distribution with a kernel that supports the overlay2 storage driver, and to use Docker volumes for write-heavy workloads instead of relying on writing data to the container’s writable layer.
+Each Docker storage driver is based on a Linux filesystem or volume manager.
+
+priority="btrfs,zfs,overlay2,fuse-overlayfs,aufs,overlay,devicemapper,vfs"
+
+Consider the following generalizations:
+-  overlay2, aufs, and overlay all operate at the file level rather than the block level. This uses memory more efficiently, but the container’s writable layer may grow quite large in write-heavy workloads.
+-  Block-level storage drivers such as devicemapper, btrfs, and zfs perform better for write-heavy workloads (though not as well as Docker volumes).
+- For lots of small writes or containers with many layers or deep filesystems, overlay may perform better than overlay2, but consumes more inodes, which can lead to inode exhaustion.
+-  btrfs and zfs require a lot of memory.
+-  zfs is a good choice for high-density workloads such as PaaS.
+
+For some users, stability is more important than performance. Though Docker considers all of the storage drivers mentioned here to be stable, some are newer and are still under active development. In general, overlay2, aufs, and devicemapper are the choices with the highest stability.
+
+To see what storage driver Docker is currently using, use docker info and look for the Storage Driver line.
+
+When you change the storage driver, any existing images and containers become inaccessible. This is because their layers cannot be used by the new storage driver. If you revert your changes, you can access the old images and containers again, but any that you pulled or created using the new driver are then inaccessible.
+
+https://docs.docker.com/compose/faq/
+
+--
