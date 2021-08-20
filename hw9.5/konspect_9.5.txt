@@ -1,0 +1,22 @@
+NETWORKING
+
+vpc - virtual private cloud
+IPv4 - 32-бітна система, яка перекладається в чотири восьмибітних числа (8 біт = байт), напр. 10.1.1.0
+IPv6 - 128 біт адреса
+subnet - підмережа почитати
+підмережі відділяються від мереж мережеми масками mask, маска вказується після айпі адреси через слеш 10.1.1.0/24
+10.1.1(=адреса мережі).0({0..255})/24 - адреса хоста, 255=broadcast(всі компи мережі 10.1.1),  
+
+CIDR block , classfull IP
+VLSM (variable lenght subnet mask) - безкласова адресація
+
+public/private IP - яка між ними різниця
+subnet і mask = підмережа і маска - також знати, питають на співбесіді
+
+
+*********
+CIDR - Classless Inter-Domain Routing.  Its goal was to slow the growth of routing tables on routers across the Internet, and to help slow the rapid exhaustion of IPv4 addresses. 
+CIDR notation is a compact representation of an IP address and its associated network mask.  CIDR notation specifies an IP address, a slash ('/') character, and a decimal number. The decimal number is the count of leading 1 bits in the network mask. The number can also be thought of as the width (in bits) of the network prefix. The IP address in CIDR notation is always represented according to the standards for IPv4 or IPv6. 
+
+IP addresses are described as consisting of two groups of bits in the address: the most significant bits are the network prefix, which identifies a whole network or subnet, and the least significant set forms the host identifier, which specifies a particular interface of a host on that network. This division is used as the basis of traffic routing between IP networks and for address allocation policies. 
+An IP address is interpreted as composed of two parts: a network-identifying prefix followed by a host identifier within that network.
