@@ -4,8 +4,8 @@
 ```sh
 provider "aws" {
   region     = "us-east-2"
-  access_key = "AKIAXICIHK4CCPYWWLVL"
-  secret_key = "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"
+  access_key = "nice_try"
+  secret_key = "but_not_today"
 }
 
 resource "aws_vpc" "dev_vpc" {
