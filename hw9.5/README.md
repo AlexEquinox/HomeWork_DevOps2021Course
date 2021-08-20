@@ -1,5 +1,5 @@
 # HOME WORK #9.5 (AWS+Terraform)
-## _Discrubing the Infrastructure Configuration with Terraform and then create it on AWS_
+## _Describing the Infrastructure Configuration with Terraform and then create it on AWS_
 ###(fixed issues with ingress and egress blocks, more info https://github.com/hashicorp/terraform-provider-aws/issues/8786)
 ```sh
 provider "aws" {
