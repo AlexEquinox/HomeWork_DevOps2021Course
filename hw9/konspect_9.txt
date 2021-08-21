@@ -1,0 +1,27 @@
+Terraform - infrastructure as code (IaC)
+EC2 - elastic compute cloud
+
+Зупинені інстанси віртуалок (EC2) не тягнуть гроші, якщо до них не підключені слідуючі сервіси: EBS, Elastic IP, E3
+
+1:05:00 - to continue
+
+terraform init
+terraform plan
+terraform apply
+terraform apply --auto-approve = не буде питати yes при установці, аналог -y в apt-get
+
+
+terraform destroy = знищує всю розгорнуту інфраструктуру зі всіма залежностями. 
+
+
+
+------
+Visual Studio: Ctrl+/ = comment out selected text
+
+Terraform Course - Automate your AWS cloud infrastructure	https://www.youtube.com/watch?v=SLB_c_ayRMo
+ 
+Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]	https://www.youtube.com/watch?v=X48VuDVv0do
+
+
+
+
