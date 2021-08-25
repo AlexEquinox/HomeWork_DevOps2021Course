@@ -1,8 +1,109 @@
-links:
+﻿links:
 
 https://kubernetes.io/docs/tutorials/kubernetes-basics/
 https://kubernetes.io/docs/tutorials/
 https://www.youtube.com/watch?v=X48VuDVv0do
 https://www.youtube.com/watch?v=ulprqHHWlng
+
+--------------------
+
+
+Kubernetes = K8s provides:
+
+1. high avaliability --> SLA (service level agreement) 99.99% of time service should be avaliable
+Downtime per year 4.38 hours, Downtime per month 21.92 minutes
+2. scalability - 
+3. disaster recovery - 
+
+In kubernetes a working server is known as "node". 
+
+In kubernetes "pod" is an abstraction over a container. Pod is a smallest unit on K8s.
+
+Service бувають внутнішні(internal) і зовнішні(external = називаються ingress). До зовнішнього
+чіпляються сокети (ip+port), DNS, сертифікати і т.д. Ingress - сервіс для зовнішнього доступу. Ingress приєднується до 
+internal sevice, який приєднується до POD, який живе на node. 
+ 
+Configmap - компонент kubernetes. Він приєднується на pod, і це є зовнішня конфігурація для poda.
+
+Для зміни конфігурації pod достатнього приліпити новий змінений файл конфігурації configmap
+
+В configmap не можна зберігати любі секретні дані - ключі,  логіни, паролі і т.д. Для цього існує
+secret - це теж конфігмапа, але зашифрована в base64 encrypted
+
+До одного pod можна зацепити кілька configmap, кілька secret, кілька ingress
+
+На ноді живе под, у пода є сервіс, у сервіса може бути інгресс (з днс, сертифікатами і т.д.),
+у пода може бути зовнішня конфігурація у вигляді конфігмапа, 
+у пода може бути зашифрована конфігурація у вигляді секрету. 
+
+Коли запускаєте на K8s кілька подів - то це називається Kubernetes cluster.
+
+Для того щоб підключити до пода зовнішнє незалежне файлове храніліще даних (starage) (S3, google drive, dropbox, будь що)
+використовують volumes (дуже подібна до докера).
+
+Под це абстракція над контейнером, а абстракцією над Подом являється Деплоймент (Deployment).
+У деплойменті описано скільки реплік Пода потрібно запустити.
+Деплоймент прив"язаний до сервіса, а сервіс працює як лоадбалансер над цими репліками подів всередині деплоймента.
+
+Клієнт приходить на інгресс, інгресс відправляє клієнта на сервіс, сервіс знає що в нього є деплоймент, 
+а за деплойментом ховається n кількість подів, 
+
+Statefullset - це деплоймент для подів з базами даних, він сам розподіляє яка з баз буде мастером, а яка слейвом.
+(слейви тільки читають дані і передають їх далі, а майстер пише і підтримує стандартизацію цих баз даних)
+
+Storage іде ззовні, він не є частиною кубернетесу. 
+
+Якщо з бази даних потрібне тільки зчитування, без запису, то такий volume може бути всередині деплоймента,
+для нього не треба statefullset. Повноцінні бази даних треба пхати в statefullset.
+
+На worker node, яким керуює kubernetes, повинно бути три компоненти:
+1. kubelet -  це інтерфейс кубернетеса, на нього типово можна зайти, там є кнопки, можна поналаштовувати щось.
+це API для kubernetes.
+2. KubeProxy - система для управління мережею, вирішує як передавати дані між подами
+3. Container Runtime - надстройка кубернетса для спілкування з контейнерами. Середовище де запускаються контейнери.
+
+MasterNode - це виділена віртуалка, яка керує звичайними нодами. Містить у собі файл зі станом всіх інших нодів і подів.
+На мастерноді крутиться api server, з яким можна спілкуватися програмно і відпраляти сигнали на все остальне
+Також MasterNode працює як Aunt Gatekeeper - через нього іде вся аутентифікація, логіни, паролі - все через нього.
+
+Minikube - це версія кубернетса, який ставиться тільки на одну віртуалку, підходить для навчання та експериментів.
+
+**************
+
+A Kubernetes cluster consists of two types of resources:
+    The Control Plane coordinates the cluster
+    Nodes are the workers that run applications
+
+The Control Plane is responsible for managing the cluster. The Control Plane coordinates all 
+activities in your cluster, such as scheduling applications, maintaining applications' desired 
+state, scaling applications, and rolling out new updates.
+
+A node is a VM or a physical computer that serves as a worker machine in a Kubernetes cluster. 
+Each node has a Kubelet, which is an agent for managing the node and communicating with the Kubernetes control plane. 
+The node should also have tools for handling container operations, such as containerd or Docker. 
+A Kubernetes cluster that handles production traffic should have a minimum of three nodes.
+
+///
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
