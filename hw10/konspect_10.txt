@@ -1,0 +1,8 @@
+links:
+
+https://kubernetes.io/docs/tutorials/kubernetes-basics/
+https://kubernetes.io/docs/tutorials/
+https://www.youtube.com/watch?v=X48VuDVv0do
+https://www.youtube.com/watch?v=ulprqHHWlng
+
+
