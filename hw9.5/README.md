@@ -1,11 +1,11 @@
 # HOME WORK #9.5 (AWS+Terraform)
-## _Discrubing the configuration with Terraform and then create it on AWS_
+## _Describing the Infrastructure Configuration with Terraform and then create it on AWS_
 ###(fixed issues with ingress and egress blocks, more info https://github.com/hashicorp/terraform-provider-aws/issues/8786)
 ```sh
 provider "aws" {
   region     = "us-east-2"
-  access_key = "AKIAXICIHK4CCPYWWLVL"
-  secret_key = "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"
+  access_key = "nice_try"
+  secret_key = "but_not_today"
 }
 
 resource "aws_vpc" "dev_vpc" {
