@@ -1,0 +1,60 @@
+Minikube - це емулятор кластера, це одна мастер нода кубернетеса.
+
+Мастер нода скадається: api server(комунікація), scheduler(дивиться на ресурси воркер нод, і коли йому треба щось 
+запустити, від планує (скедулить) що запускати відповідно до поточного завантаження нодів), control manager (містить 
+інформацію про стан інфраструктури), etcd (містить у собі дані про інфраструктуру, це конфіг файли зі станом 
+інфраструктури, всі ноди беруть з нього інформацію).
+
+Small cluster(мінімальний в продакшені) типово складається з 5 елементів: 2 master node, 3 worker'api
+
+Рівень абстракції в кубернетесі - це deployment. Ви ніколи не будете напряму працювати з контейнером чи навіть подом, 
+а тільки на рівні деплойменту. 
+
+Коли створюєте деплоймент, то для нього потрібні два параметри: ім"я і імідж(буде брати з докер хаба).
+Після того як deployment викачає імідж, далі він створить replicaset (щось на зразок темплейта, із якого потім будуть 
+запускатися деплойменти, коли зміните імідж, replicaset теж буде мінятися). Із реплікасет створюються поди. Деплоймент створює реплікасет, а реплікасет створює створює поди. 
+В кубернетеса немає навіть такої команди як "створити под", вся ця робота ведеться через деплоймент.
+
+Кубернетес - це оркестрація докер контейнерів.
+
+minikube status = показує статус мінікуба
+minikube delete = видаляє все, після цього можна заново запускати minicube start
+minikube stop = зупиняє кластер
+minikube pause/unpause = призупиняє/відновлює
+minikibe dashboard = запускає через вебінтерфейс у браузері дешборд кубернетса
+
+kubectl get pods --all-namespaces = показує геть всі поди із геть всіх неймспейсів, в тому числі системних системних.
+kubectl get pods = показує лише поди із поточного дефолтного робочого кластеру.
+kubectl get nodes = показує ноди
+kubectl get services = показує сервіси
+kubectl create = 
+kubectl create deployment NAME --image=NAME  = створює деплоймент
+kubectl create deployment nginx_deploy --image=nginx  = створить деплоймент nginx_deploy і викачає з докер хаба образ 
+	контейнера nginx
+kubectl get replicaset = покаже всі реплікасети
+kubectl get deployments  = покаже деплойменти
+kubectl edit deployment <NAME_of_deployment> = редагувати деплоймент. 
+kubectl logs <NAME_of_POD> = покаже всі логі контейнера, хто на нього заходив і т.д. 
+	(NAME_of_POD можна взнати через kubectl get pods)
+kubectl exec -it <NAME_of_POD> -- bin/bash = зайти всередину контейнера, і запустити bash
+kubectl delete deployment <NAME_of_deployment> = видаляє деплоймент
+
+
+
+
+
+
+There are two major categories of services in Kubernetes:
+    NodePort
+    LoadBalancer
+
+A NodePort service is the most basic way to get external traffic directly to your service. NodePort, as the name implies, opens a specific port, and any traffic that is sent to this port is forwarded to the service.
+
+A LoadBalancer service is the standard way to expose a service to the internet. With this method, each service gets its own IP address.
+
+
+
+ 
+
+
+
