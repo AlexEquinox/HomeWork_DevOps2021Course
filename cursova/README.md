@@ -16,7 +16,7 @@
 
 1. On  Ubuntu Server (VirtualBox) I manually performed all the steps to launch my application with all the necessary dependencies (Docker, Docker Compose etc)  
 2. Then I automated all the steps into a bash script, testing it again and again how it performing on clear Ubuntu Server 
-3. Next on AWS Console I launched EC2 instance with the same Ubuntu Server, connected to it through SSH with Putty, created there same bash script with nano text editor and executed it. So I got my app running on internet with a true public IP
+3. Next on AWS Console I launched EC2 instance with the same Ubuntu Server, connected to it through SSH with Putty, created there same bash script with nano text editor and executed it. So I got my app running on internet with a true public IP (but only after manually opened the 80 HTTP port in Security Group settings from AWS Console :) )
 4. And finally I fully automated all the steps with Terraform: the Terraform has automated the whole infrastructure creation, and the script (passed in user_data block) has automated the application launch on that infrastructure
 
 ## The resources I have used to mix and assemble my project
