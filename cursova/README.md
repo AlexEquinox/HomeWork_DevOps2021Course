@@ -10,7 +10,7 @@
 - ### freeDNS service was used to obtain a DNS-name ( http://alex7equinox.chickenkiller.com = 3.135.208.69 IP) 
 
 ## The goal 
-- The main goal of the project was to make an automation (aka DevOps) of a whole deployment proccess. And it was achived: everything is launching by only hitting one key  after ``` teraform apply ``` command. 
+- The main goal of the project was to make an automation (aka DevOps) of a whole deployment proccess. And it was achived: everything is launching by only hitting one key  after ``` terraform apply ``` command. 
 
 ## The resources I have used to mix and assemble my project
 - Simple multi container app example:
