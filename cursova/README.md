@@ -4,7 +4,7 @@
 - ### To automate infrastructure deployment I used infrastructure as code (IaC) software tool Terraform
 - ### I used Docker Compose to define and spin up my multi-container application
 - ### Also I wrote a bash script to bundle all together and automate application deployment during EC2 instance creation in Terraform
-- ### For safely store and using my AWS Access_Keys I used  AWS CLI tool
+- ### For safely store and using of my AWS Access_Keys I used  AWS CLI tool
 - ### The necessary Docker images was uploaded to my repo on Docker Hub
 - ### GitHub was used for hosting my App Repo that is been downloading during script exucution in ```user_data`` section in Terraform ( https://github.com/AlexEquinox/app_cursova.git )
 - ### freeDNS service was used to obtain a DNS-name ( http://alex7equinox.chickenkiller.com = 3.135.208.69 IP) 
