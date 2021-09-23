@@ -6,8 +6,8 @@
 - ### Also I wrote a bash script to bundle all together and automate application deployment during EC2 instance creation in Terraform
 - ### For safely store and using of my AWS Access_Keys I used  AWS CLI tool
 - ### The necessary Docker images was uploaded to my repo on Docker Hub
-- ### GitHub was used for hosting my App Repo that is been downloading during script exucution in ```user_data``` section in Terraform ( https://github.com/AlexEquinox/app_cursova.git )
-- ### freeDNS service was used to obtain a DNS-name ( http://alex7equinox.chickenkiller.com = 3.135.208.69 IP) 
+- ### GitHub was used for hosting my App Repo that is been downloading during script execution in ```user_data``` section in Terraform ( https://github.com/AlexEquinox/app_cursova.git )
+- ### freeDNS service was used to obtain a DNS-name ( http://alex7equinox.chickenkiller.com = 3.135.208.69 IP (NOW INACTIVE!)) 
 
 ## The goal 
 - The main goal of the project was to make an automation (aka DevOps) of a whole deployment proccess. And it was achived: everything is launching by only hitting one key  after ``` terraform apply ``` command. 
@@ -21,9 +21,12 @@
 
 ## The resources I have used to mix and assemble my project
 - Simple multi container app example:
-https://docs.docker.com/get-started/08_using_compose/
-- Exapmle deployment of Apache Web Server in AWS Using Terraform https://dev.to/chefgs/create-apache-web-server-in-aws-using-terraform-1fpj#install-and-configure-aws-cli
-- AWS CLI Command Reference https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/index.html
+  - https://docs.docker.com/get-started/02_our_app/
+  - https://docs.docker.com/get-started/08_using_compose/
+- Exapmle deployment of Apache Web Server in AWS Using Terraform 
+  - https://dev.to/chefgs/create-apache-web-server-in-aws-using-terraform-1fpj#install-and-configure-aws-cli
+- AWS CLI Command Reference 
+  - https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/index.html
 
 ## Code Snippets:
 - ### docker-compose.yml file:
