@@ -14,16 +14,16 @@
 
 ## The main steps I went through 
 
-1. On  Ubuntu Server (VirtualBox) I manually performed all the steps to launch my application with all the necessary dependencies (Docker, Docker Compose etc)  
-2. Then I automated all the steps into a bash script, testing it again and again how it performing on clear Ubuntu Server 
-3. Next on AWS Console I launched EC2 instance with the same Ubuntu Server, connected to it through SSH with Putty, created there same bash script with nano text editor and executed it. So I got my app running on internet with a true public IP (but only after manually opened the 80 HTTP port in Security Group settings from AWS Console :) )
-4. And finally I fully automated all the steps with Terraform: the Terraform has automated the whole infrastructure creation, and the script (passed in user_data block) has automated the application launch on that infrastructure
+- 1. On  Ubuntu Server (VirtualBox) I manually (command by command) performed  all the steps to launch my application with all the necessary dependencies (Docker, Docker Compose etc)  
+- 2. Then I automated all the steps into a bash script, testing it again and again how it performing on clear Ubuntu Server 
+- 3. Next on AWS Console I launched EC2 instance with the same Ubuntu Server, connected to it through SSH with Putty, created there the same bash script with nano text editor and executed it. So I got my app running on internet with a true public IP (but only after manually opened the 80 HTTP port in Security Group settings from AWS Console :) )
+- 4. And finally I fully automated all the steps with Terraform: the Terraform has automated the whole infrastructure creation, and the script (passed in user_data block) has automated the application launch on that infrastructure
 
 ## The resources I have used to mix and assemble my project
 - Simple multi container app example:
   - https://docs.docker.com/get-started/02_our_app/
   - https://docs.docker.com/get-started/08_using_compose/
-- Exapmle deployment of Apache Web Server in AWS Using Terraform 
+- Example deployment of Apache Web Server in AWS Using Terraform 
   - https://dev.to/chefgs/create-apache-web-server-in-aws-using-terraform-1fpj#install-and-configure-aws-cli
 - AWS CLI Command Reference 
   - https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/index.html
